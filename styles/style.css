@@ -14,6 +14,7 @@
     --main-dot-color: #44556e;
 }
 
+/*Websites Structure*/
 html, body {
     height: 100%;
 }
@@ -29,7 +30,7 @@ header {
 
     background-color: var(--header-color);
     color: var(--page-text-color);
-    box-shadow: 10px 0px 15px var(--header-shadow);
+    box-shadow: 0px 0px 2em var(--header-shadow);
 
     z-index: 100;
 }
@@ -54,6 +55,7 @@ header button {
     color: var(--page-text-color);
 }
 
+
 main {
     width: auto;
     height: 100svh;
@@ -64,4 +66,23 @@ main {
     background-color: var(--main-color);
     
     z-index:0;
+}
+
+
+
+/*Notes*/
+.sticky-note {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    background-color: #e4e466;
+    width: 20em;
+    height: 18em;
+    border-radius: 1em;
+    box-shadow: 0px 0px 2em var(--header-shadow);
+}
+
+.notelabels {
+
 }
