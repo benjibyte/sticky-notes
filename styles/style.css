@@ -21,7 +21,8 @@ html, body {
 header {
     position:relative;
     display: flex;
-    align-items: center;
+    align-content: center;
+    justify-content: center;
 
     width: auto;
     height: 5em;
@@ -34,9 +35,24 @@ header {
 }
 
 header h1 {
-    flex-grow:4em;
+    align-content: center;
+    justify-content: center;
+    flex-shrink: 0
 }
+header button {
+    position: absolute;
+    right: 1em;
+    top: 50%;
+    transform: translateY(-50%);
 
+    width: 2em;
+    height: 2em;
+    font-size:xx-large;
+
+    background: none;
+    border: none;
+    color: var(--page-text-color);
+}
 
 main {
     width: auto;
