@@ -14,25 +14,38 @@
     --main-dot-color: #44556e;
 }
 
+html, body {
+    height: 100%;
+}
 
 header {
+    position:relative;
     display: flex;
-    justify-content: center;
-    align-items:center;
-    padding: 1em;
+    align-items: center;
+
+    width: auto;
+    height: 5em;
 
     background-color: var(--header-color);
     color: var(--page-text-color);
-    box-shadow: 10px 10px 5px var(--header-shadow);
+    box-shadow: 10px 0px 15px var(--header-shadow);
+
     z-index: 100;
 }
 
+header h1 {
+    flex-grow:4em;
+}
+
+
 main {
     width: auto;
-    height: 100vh;
+    height: 100svh;
+    
 
     background-image: radial-gradient(var(--main-dot-color) 2px, transparent 2px);
     background-size: 32px 32px;
     background-color: var(--main-color);
     
+    z-index:0;
 }
