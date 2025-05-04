@@ -1,0 +1,38 @@
+* {
+    /*Basic Formatting*/
+    margin: 0;
+    padding: 0;
+
+    font-family: sans-serif;
+
+    /*Color Varialbes*/
+    --header-color: #44556e;
+    --header-shadow: #000000;
+    --page-text-color: #ffffff;
+
+    --main-color: #222233;
+    --main-dot-color: #44556e;
+}
+
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    padding: 1em;
+
+    background-color: var(--header-color);
+    color: var(--page-text-color);
+    box-shadow: 10px 10px 5px var(--header-shadow);
+    z-index: 100;
+}
+
+main {
+    width: auto;
+    height: 100vh;
+
+    background-image: radial-gradient(var(--main-dot-color) 2px, transparent 2px);
+    background-size: 32px 32px;
+    background-color: var(--main-color);
+    
+}
