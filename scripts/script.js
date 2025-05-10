@@ -44,7 +44,7 @@ function makeNote(tagCount) {
 
     // touch events
     tag.addEventListener("touchstart", startDrag);
-    tag.addEventListener("touchend", stopDrag);
+    document.addEventListener("touchend", stopDrag);
 
     function startDrag(e) {
 
@@ -54,25 +54,39 @@ function makeNote(tagCount) {
 
         e.preventDefault();
 
-        offsetX = e.clientX - tag.getBoundingClientRect().left;
-        offsetY = e.clientY - tag.getBoundingClientRect().top;
+        if (e.type === "touchstart") {
+            offsetX = e.touches[0].clientX - tag.getBoundingClientRect().left;
+            offsetY = e.touches[0].clientY - tag.getBoundingClientRect().top;
+        } else {
+            offsetX = e.clientX - tag.getBoundingClientRect().left;
+            offsetY = e.clientY - tag.getBoundingClientRect().top;
+        }
 
         tag.classList.add("dragging");
 
         document.addEventListener("mousemove", dragtag);
-        
+        document.addEventListener("touchmove", dragtag);
     }
 
     function dragtag(e) {
         e.preventDefault();
 
+        let clientX, clientY;
+
+        if (e.type === "touchmove") {
+            clientX = e.touches[0].clientX;
+            clientY = e.touches[0].clientY;
+        } else {
+            clientX = e.clientX;
+            clientY = e.clientY;
+        }
+
         //sets variables for touch IF there is a touch
-        const clientX = e.type === "touchstart" ? e.touches[0].clientX : e.clientX;
-        const clientY = e.type === "touchstart" ? e.touches[0].clientY : e.clientY;
+        
 
 
-        let x = e.clientX - offsetX;
-        let y = e.clientY - offsetY;
+        let x = clientX - offsetX;
+        let y = clientY - offsetY;
 
         tag.style.left = x + 'px';
         tag.style.top = y + 'px';
