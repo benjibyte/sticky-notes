@@ -1,60 +1,60 @@
 // https://dev.to/code_passion/creating-a-draggable-element-using-html-css-and-javascript-54g7
 
+const addNoteBtn = document.getElementById("add-btn");
+let tagCount = 0;
+addNoteBtn.addEventListener("click", () => {
+    makeNote(tagCount)
+    tagCount++;
+});
 
 
-// The note add button
-const addBtn = document.getElementById("add-btn");
+function makeNote(tagCount) {
+    let tagId = "tag" + `${tagCount}`;
 
-// Note Array
-const notebook = [];
-
-
-
-addBtn.addEventListener("click", createNote);
-
-function createNote() {
-    // get the main note area
-    let noteCount = notebook.length; // tie the number to the length of the array
-    const billboard = document.querySelector("main");
+    // create the tag
+    const newTag = document.createElement("div");
+    newTag.id = tagId;
+    newTag.className = "draggable";
+    document.querySelector("main").appendChild(newTag);
     
-    let noteID = "note" + `${noteCount}`;
-    let newNote = document.createElement("div");
-    newNote.id = noteID;
-    newNote.className = "draggable";
+
+    // find the tag
+    let tag = document.getElementById(tagId);
+    let offsetX, offsetY;
     
-    notebook[noteCount] = newNote;
-    billboard.appendChild(newNote);
 
-}
+    tag.addEventListener("mousedown", startDrag);
+    tag.addEventListener("mouseup", stopDrag);
 
+    function startDrag(e) {
+        e.preventDefault();
+        offsetX = e.clientX - tag.getBoundingClientRect().left;
+        offsetY = e.clientY - tag.getBoundingClientRect().top;
 
-let note = document.getElementById("note1");
-let offsetX, offsetY;
+        tag.classList.add("dragging");
 
-note.addEventListener("mousedown", startDrag);
-note.addEventListener("mouseup", stopDrag);
+        document.addEventListener("mousemove", dragtag);
+    }
 
-function startDrag(e) {
-    e.preventDefault();
-    offsetX = e.clientX - note.getBoundingClientRect().left;
-    offsetY = e.clientY - note.getBoundingClientRect().top;
+    function dragtag(e) {
+        e.preventDefault();
+        let x = e.clientX - offsetX;
+        let y = e.clientY - offsetY;
 
-    note.classList.add("dragging");
+        tag.style.left = x + 'px';
+        tag.style.top = y + 'px';
+    };
 
-    document.addEventListener("mousemove", dragNote);
-}
+    function stopDrag() {
+        tag.classList.remove("dragging");
+        document.removeEventListener("mousemove", dragtag);
+    }
 
-function dragNote(e) {
-    e.preventDefault();
-    let x = e.clientX - offsetX;
-    let y = e.clientY - offsetY;
-
-    note.style.left = x + 'px';
-    note.style.top = y + 'px';
+    return tagCount;
 };
 
-function stopDrag() {
-    note.classList.remove("dragging");
-    document.removeEventListener("mousemove", dragNote);
-}
 
+const tagBook = document.querySelectorAll(".draggable");
+
+
+console.log(tagBook);
