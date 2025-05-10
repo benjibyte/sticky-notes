@@ -42,6 +42,9 @@ function makeNote(tagCount) {
     tag.addEventListener("mousedown", startDrag);
     tag.addEventListener("mouseup", stopDrag);
 
+    tag.addEventListener("touchstart", startDrag);
+    tag.addEventListener("touchend", stopDrag);
+
     function startDrag(e) {
 
         if (e.target.classList.contains("note")) { // cease dragging behavior for notes. only drag from tag!
@@ -56,6 +59,7 @@ function makeNote(tagCount) {
         tag.classList.add("dragging");
 
         document.addEventListener("mousemove", dragtag);
+        document.addEventListener("touchmove", dragtag);
     }
 
     function dragtag(e) {
@@ -70,6 +74,7 @@ function makeNote(tagCount) {
     function stopDrag() {
         tag.classList.remove("dragging");
         document.removeEventListener("mousemove", dragtag);
+        document.removeEventListener("touchmove", dragtag);
     }
 
     return tagCount;
