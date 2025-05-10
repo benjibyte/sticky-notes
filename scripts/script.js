@@ -33,3 +33,4 @@ function stopDrag() {
 
 
 // The note add button
+const addBtn = document.getElementById("add-btn");
