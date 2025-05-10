@@ -34,3 +34,24 @@ function stopDrag() {
 
 // The note add button
 const addBtn = document.getElementById("add-btn");
+
+// Note Array
+const notebook = [];
+
+
+
+addBtn.addEventListener("click", createNote);
+
+function createNote() {
+    // get the main note area
+    let noteCount = notebook.length; // tie the number to the length of the array
+
+    const billboard = document.getElementsByName("main");
+    let noteID = "note" + `${noteCount}`;
+    let newNote = document.createElement("div");
+    newNote.id = noteID;
+    newNote.className = "draggable";
+    
+    billboard.appendChild(newNote);
+
+}
