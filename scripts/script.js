@@ -27,6 +27,12 @@ function makeNote(tagCount) {
     newTag.className = "draggable";
     document.querySelector("main").appendChild(newTag);
     
+    // create note to follow tag
+    const tagNote = document.createElement("div"); // the actual note that the user uses is just a content editable div that follows it's parent tag.
+    tagNote.className = "note"; // I might implement groups later on so we can have multiple colors for note organization!
+    tagNote.setAttribute("contenteditable", "true");
+
+    newTag.appendChild(tagNote);
 
     // find the tag
     let tag = document.getElementById(tagId);
