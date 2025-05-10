@@ -40,9 +40,24 @@ header h1 {
     justify-content: center;
     flex-shrink: 0
 }
-header button {
+header #theme-btn {
     position: absolute;
     right: 1em;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 2em;
+    height: 2em;
+    font-size:xx-large;
+
+    background: none;
+    border: none;
+    color: var(--page-text-color);
+}
+
+header #add-btn {
+    position: absolute;
+    left: 1em;
     top: 50%;
     transform: translateY(-50%);
 
@@ -71,54 +86,20 @@ main {
 
 
 /*Notes*/
-.sticky-note {
-    display: flex;
-    flex-direction: column;
 
+.draggable {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 20em;
-    height: 18em;
-    max-height: 18em;
-
-    background-color: #e4e466;
-    border-radius: 1em;
-    border: none;
-    box-shadow: 0px 0px 2em var(--header-shadow);
-}
-
-.notelabels {
-    border:none;
-
+    cursor: grab;
+    width: 100px;
+    height: 100px;
+    background-color: #007bff;
+    color: #fff;
     text-align: center;
-    font-weight: bold;
-    font-size: x-large;
-    padding: 0.25em;
-
-    max-height: inherit;
+    line-height: 100px;
+    border-radius: 8px;
     
 }
 
-.notelabels:focus {
-    outline:none;
-}
-
-.textcontent {
-    border:none;
-    border-bottom-left-radius: inherit;
-    border-bottom-right-radius: inherit;
-    background-color: #e2c855;
-
-    width: calc(inherit - 1em);
-    height: inherit;
-    max-height: inherit;
-    padding: 1em;
-
-    font-size: large;
-    font-weight: bold;
-}
-
-.textcontent:focus {
-    outline:none;
+.draggable.dragging {
+    cursor: grabbing;
 }

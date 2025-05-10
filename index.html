@@ -1,28 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="scripts/script.js"></script>
-    <link rel="stylesheet" href="styles/style.css">
-    <title>Sticky Notes</title>
-</head>
-<body>
-    <header>
-        <h1>Sticky Notes</h1>
-        <button>◑</button>
-    </header>
-    <main>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link rel="stylesheet" href="styles/style.css">
+        <title>Sticky Notes</title>
+    </head>
+    <body>
+        <header>
+            <button id="add-btn">+</button>
+            <h1>Sticky Notes</h1>
+            <button id="theme-btn">◑</button>
+        </header>
+        <main>
 
-        <div class="sticky-note" id="note1">   
-            <div for="note1-textcontent" contenteditable="true" class="notelabels"></div>
-            <div contenteditable="true" class="textcontent" id="note1-textcontent"></div>
-        </div>
+            <div  contenteditable="true" class="draggable" id="note1"></div>
+
+            
+        </main>
+
+        
 
 
-    </main>
-    <footer>
-        <p>Powered by BenjiByte</p>
-    </footer>
+        <footer>
+            <p>Powered by BenjiByte</p>
+        </footer>
+        <script src="scripts/script.js"></script>
 </body>
 </html>
