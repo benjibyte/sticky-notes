@@ -1,4 +1,33 @@
 // https://dev.to/code_passion/creating-a-draggable-element-using-html-css-and-javascript-54g7
+
+
+
+// The note add button
+const addBtn = document.getElementById("add-btn");
+
+// Note Array
+const notebook = [];
+
+
+
+addBtn.addEventListener("click", createNote);
+
+function createNote() {
+    // get the main note area
+    let noteCount = notebook.length; // tie the number to the length of the array
+    const billboard = document.querySelector("main");
+    
+    let noteID = "note" + `${noteCount}`;
+    let newNote = document.createElement("div");
+    newNote.id = noteID;
+    newNote.className = "draggable";
+    
+    notebook[noteCount] = newNote;
+    billboard.appendChild(newNote);
+
+}
+
+
 let note = document.getElementById("note1");
 let offsetX, offsetY;
 
@@ -29,29 +58,3 @@ function stopDrag() {
     document.removeEventListener("mousemove", dragNote);
 }
 
-
-
-
-// The note add button
-const addBtn = document.getElementById("add-btn");
-
-// Note Array
-const notebook = [];
-
-
-
-addBtn.addEventListener("click", createNote);
-
-function createNote() {
-    // get the main note area
-    let noteCount = notebook.length; // tie the number to the length of the array
-
-    const billboard = document.getElementsByName("main");
-    let noteID = "note" + `${noteCount}`;
-    let newNote = document.createElement("div");
-    newNote.id = noteID;
-    newNote.className = "draggable";
-    
-    billboard.appendChild(newNote);
-
-}
