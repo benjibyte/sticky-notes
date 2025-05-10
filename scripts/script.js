@@ -43,6 +43,12 @@ function makeNote(tagCount) {
     tag.addEventListener("mouseup", stopDrag);
 
     function startDrag(e) {
+
+        if (e.target.classList.contains("note")) { // cease dragging behavior for notes. only drag from tag!
+            return;
+        }
+
+
         e.preventDefault();
         offsetX = e.clientX - tag.getBoundingClientRect().left;
         offsetY = e.clientY - tag.getBoundingClientRect().top;
