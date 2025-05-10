@@ -91,6 +91,8 @@ main {
 /*Tags and Notes*/
 
 .draggable {
+    margin-top: 3em;
+
     position: absolute;
     cursor: grab;
     width: 20em;
