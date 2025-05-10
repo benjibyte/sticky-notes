@@ -38,9 +38,13 @@ function makeNote(tagCount) {
     let tag = document.getElementById(tagId);
     let offsetX, offsetY;
     
-
+    // mouse events
     tag.addEventListener("mousedown", startDrag);
-    tag.addEventListener("mouseup", stopDrag);
+    document.addEventListener("mouseup", stopDrag);
+
+    // touch events
+    tag.addEventListener("touchstart", startDrag);
+    tag.addEventListener("touchend", stopDrag);
 
     function startDrag(e) {
 
@@ -48,18 +52,25 @@ function makeNote(tagCount) {
             return;
         }
 
-
         e.preventDefault();
+
         offsetX = e.clientX - tag.getBoundingClientRect().left;
         offsetY = e.clientY - tag.getBoundingClientRect().top;
 
         tag.classList.add("dragging");
 
         document.addEventListener("mousemove", dragtag);
+        
     }
 
     function dragtag(e) {
         e.preventDefault();
+
+        //sets variables for touch IF there is a touch
+        const clientX = e.type === "touchstart" ? e.touches[0].clientX : e.clientX;
+        const clientY = e.type === "touchstart" ? e.touches[0].clientY : e.clientY;
+
+
         let x = e.clientX - offsetX;
         let y = e.clientY - offsetY;
 
@@ -70,6 +81,8 @@ function makeNote(tagCount) {
     function stopDrag() {
         tag.classList.remove("dragging");
         document.removeEventListener("mousemove", dragtag);
+        document.removeEventListener("touchmove", dragtag);
+        
     }
 
     return tagCount;
