@@ -101,6 +101,7 @@ main {
     background-color: var(--tag-def-color);
     color: #fff;
     
+    touch-action: none;
     
 }
 
