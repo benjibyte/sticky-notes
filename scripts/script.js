@@ -27,6 +27,12 @@ function makeNote(tagCount) {
     newTag.className = "draggable";
     document.querySelector("main").appendChild(newTag);
     
+    // create close square to follow tag
+    const closetag = document.createElement("div"); // the red close square to delete an element.
+    closetag.className = "closing";
+
+    newTag.appendChild(closetag);
+    
     // create note to follow tag
     const tagNote = document.createElement("div"); // the actual note that the user uses is just a content editable div that follows it's parent tag.
     tagNote.className = "note"; // I might implement groups later on so we can have multiple colors for note organization!
@@ -49,6 +55,11 @@ function makeNote(tagCount) {
     function startDrag(e) {
 
         if (e.target.classList.contains("note")) { // cease dragging behavior for notes. only drag from tag!
+            return;
+        }
+
+        if (e.target.classList.contains("closing")){
+            e.target.parentElement.remove();
             return;
         }
 
