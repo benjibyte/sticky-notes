@@ -105,3 +105,6 @@ const tagBook = document.querySelectorAll(".draggable");
 
 
 console.log(tagBook);
+
+
+
