@@ -4,7 +4,7 @@
 // original dragging tutorial
 // https://dev.to/code_passion/creating-a-draggable-element-using-html-css-and-javascript-54g7
 //
-import(read.js);
+
 
 const addNoteBtn = document.getElementById("add-btn");
 let tagCount = 0;
@@ -24,7 +24,7 @@ function makeNote(tagCount) {
     document.querySelector("main").appendChild(newTag);
     
     // create note to follow tag
-    const tagNote = document.createElemente("div"); // the actual note that the user uses is just a content editable div that follows it's parent tag.
+    const tagNote = document.createElement("div"); // the actual note that the user uses is just a content editable div that follows it's parent tag.
     tagNote.className = "note"; // I might implement groups later on so we can have multiple colors for note organization!
     tagNote.setAttribute("contenteditable", "true");
 
@@ -98,9 +98,7 @@ function makeNote(tagCount) {
     return tagCount;
 };
 
-funtion saveWork() {
-  
-}
+
 const tagBook = document.querySelectorAll(".draggable");
 
 
