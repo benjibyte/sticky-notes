@@ -6,15 +6,15 @@
     font-family: sans-serif;
 
     /*Color Varialbes*/
-    --header-color: #44556e;
-    --header-shadow: #000000;
-    --page-text-color: #ffffff;
+    --header-color: #F57D26;
+    --box-shadow: #1E2326;
+    --page-text-color: #272E33;
 
-    --main-color: #222233;
-    --main-dot-color: #44556e;
+    --main-color: #D3C6AA;
+    --main-dot-color: #9DA9A0;
 
-    --tag-def-color: #e9b962;
-    --note-def-color: #fff2a7;
+    --tag-def-color: #E69875;
+    --note-def-color: #DBBC7F;
 }
 
 /*Websites Structure*/
@@ -33,7 +33,7 @@ header {
 
     background-color: var(--header-color);
     color: var(--page-text-color);
-    box-shadow: 0px 0px 2em var(--header-shadow);
+    box-shadow: 0px 0px 2em var(--box-shadow);
 
     z-index: 100;
 }
@@ -123,7 +123,7 @@ main {
     font-weight: bold;
 
     background-color: var(--note-def-color);
-    box-shadow: 0px 10px 1em black;
+    box-shadow: 0px 10px 1em var(--box-shadow);
     border-bottom-left-radius: 1em;
     border-bottom-right-radius: 1em;
 }

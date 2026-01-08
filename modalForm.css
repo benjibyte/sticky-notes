@@ -1,0 +1,25 @@
+/* Separate file for the modal save form */
+* {
+    /*Basic Formatting*/
+    margin: 0;
+    padding: 0;
+
+    font-family: sans-serif;
+
+    /*Color Varialbes*/
+    --header-color: #F57D26;
+    --box-shadow: #1E2326;
+    --page-text-color: #272E33;
+
+    --main-color: #D3C6AA;
+    --main-dot-color: #9DA9A0;
+
+    --tag-def-color: #E69875;
+    --note-def-color: #DBBC7F;
+}
+
+.save-modal {
+  background-color: var(--main-color);
+  box-shadow: 10px 10px var(--box-shadow);
+
+}

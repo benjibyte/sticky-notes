@@ -1,14 +1,10 @@
+// JavaScript code for the Sticky-Notes webapp made by Benjibyte on Github.
 
+// Resources I learned to do this stuff:
 // original dragging tutorial
 // https://dev.to/code_passion/creating-a-draggable-element-using-html-css-and-javascript-54g7
-
-/*
-
-    One Bug: If you have multiple "tags" and then click and drag the oldest one onto the next oldest one...
-    then soon you can drag around a stack. I want to make this a feature and reverse it for whatever you click 
-
-    bug seems to bee based off of the z-index
-*/
+//
+import(read.js);
 
 const addNoteBtn = document.getElementById("add-btn");
 let tagCount = 0;
@@ -28,7 +24,7 @@ function makeNote(tagCount) {
     document.querySelector("main").appendChild(newTag);
     
     // create note to follow tag
-    const tagNote = document.createElement("div"); // the actual note that the user uses is just a content editable div that follows it's parent tag.
+    const tagNote = document.createElemente("div"); // the actual note that the user uses is just a content editable div that follows it's parent tag.
     tagNote.className = "note"; // I might implement groups later on so we can have multiple colors for note organization!
     tagNote.setAttribute("contenteditable", "true");
 
@@ -102,7 +98,9 @@ function makeNote(tagCount) {
     return tagCount;
 };
 
-
+funtion saveWork() {
+  
+}
 const tagBook = document.querySelectorAll(".draggable");
 
 
