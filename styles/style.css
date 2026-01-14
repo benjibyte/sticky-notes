@@ -128,6 +128,18 @@ main {
     border-bottom-right-radius: 1em;
 }
 
+.closing {
+    position: absolute;
+    cursor: default;
+    width: 1em;
+    height: 1em;
+
+    color: black;
+    font-weight: bold;
+
+    background-color: #ff0000;   
+}
+
 .note:focus {
     outline: none;
 }
