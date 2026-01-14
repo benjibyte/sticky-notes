@@ -58,8 +58,8 @@ header #theme-btn {
     color: var(--page-text-color);
 }
 
-header #add-btn {
-    position: absolute;
+header button {
+    position: relative;
     left: 1em;
     top: 50%;
     transform: translateY(-50%);
@@ -71,6 +71,10 @@ header #add-btn {
     background: none;
     border: none;
     color: var(--page-text-color);
+}
+header #add-btn {
+    position: absolute;
+    left: 1em;
 }
 
 
