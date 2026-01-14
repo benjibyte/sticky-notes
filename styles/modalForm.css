@@ -1,0 +1,5 @@
+/* Separate file for the modal save form */
+
+.save-modal {
+    display: none;
+}

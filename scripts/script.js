@@ -1,14 +1,10 @@
+// JavaScript code for the Sticky-Notes webapp made by Benjibyte on Github.
 
+// Resources I learned to do this stuff:
 // original dragging tutorial
 // https://dev.to/code_passion/creating-a-draggable-element-using-html-css-and-javascript-54g7
+//
 
-/*
-
-    One Bug: If you have multiple "tags" and then click and drag the oldest one onto the next oldest one...
-    then soon you can drag around a stack. I want to make this a feature and reverse it for whatever you click 
-
-    bug seems to bee based off of the z-index
-*/
 
 const addNoteBtn = document.getElementById("add-btn");
 let tagCount = 0;
@@ -118,3 +114,6 @@ const tagBook = document.querySelectorAll(".draggable");
 
 
 console.log(tagBook);
+
+
+
