@@ -26,6 +26,7 @@ function makeNote(tagCount) {
     // create close square to follow tag
     const closetag = document.createElement("div"); // the red close square to delete an element.
     closetag.className = "closing";
+    closetag.textContent = "x";
 
     newTag.appendChild(closetag);
     
