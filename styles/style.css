@@ -7,8 +7,10 @@
 
     /*Color Varialbes*/
     --header-color: #F57D26;
-    --box-shadow: #1E2326;
+    --box-shadow: #39444a;
     --page-text-color: #272E33;
+
+    --button-highlight: #f8a744;
 
     --main-color: #D3C6AA;
     --main-dot-color: #9DA9A0;
@@ -57,7 +59,7 @@ header #theme-btn {
     border: none;
     color: var(--page-text-color);
 }
-
+/* 
 header #add-btn {
     position: absolute;
     left: 1em;
@@ -71,6 +73,30 @@ header #add-btn {
     background: none;
     border: none;
     color: var(--page-text-color);
+} */
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    width: 2em;
+    padding: 1em;
+    z-index: 99;
+
+    button {
+        background-color: var(--header-color);
+        border: none;
+        border-radius: 50%;
+
+        width: 3em;
+        height: 3em;
+        margin-top: 1em;
+
+        box-shadow: 0px 0px 0.25em var(--box-shadow);
+    }
+
+    button:hover {
+        background-color: var(--button-highlight);
+    }
 }
 
 
@@ -92,7 +118,7 @@ main {
 
 .draggable {
     
-
+    z-index: 50;
     position: absolute;
     cursor: grab;
     width: 20em;
@@ -102,6 +128,8 @@ main {
     color: #fff;
     
     touch-action: none;
+
+    box-shadow: 0px 10px 1em var(--box-shadow);
     
 }
 
@@ -117,7 +145,7 @@ main {
     height: 12em;
     margin-top: 2em;
     padding: 1em;
-
+    z-index: 50;
 
     color: black;
     font-weight: bold;
