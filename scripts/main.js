@@ -1,3 +1,4 @@
+import { readBoard } from "./read.js";
 // JavaScript code for the Sticky-Notes webapp made by Benjibyte on Github.
 
 // Resources I learned to do this stuff:
@@ -6,11 +7,19 @@
 //
 
 
+
 const addNoteBtn = document.getElementById("add-btn");
 let tagCount = 0;
 addNoteBtn.addEventListener("click", () => {
     makeNote(tagCount)
     tagCount++;
+});
+
+const saveNoteBtn = document.getElementById("save-btn");
+saveNoteBtn.addEventListener("click", () => {
+    const notesArea = document.querySelector(".notes-area");
+    const notesArray = Array.from(notesArea.childNodes);
+    readBoard(notesArray);
 });
 
 
@@ -26,8 +35,8 @@ function makeNote(tagCount) {
     // create close square to follow tag
     const closetag = document.createElement("div"); // the red close square to delete an element.
     closetag.className = "closing";
-    closetag.textContent = "x";
-
+    closetag.textContent = "X";
+ 
     newTag.appendChild(closetag);
     
     // create note to follow tag
@@ -109,7 +118,6 @@ function makeNote(tagCount) {
 
     return tagCount;
 };
-
 
 const tagBook = document.querySelectorAll(".draggable");
 

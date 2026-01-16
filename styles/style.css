@@ -164,8 +164,8 @@ main {
 
     color: black;
     font-weight: bold;
-
-    background-color: #ff0000;   
+    text-align: center;
+       
 }
 
 .note:focus {
