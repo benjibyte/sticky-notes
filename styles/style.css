@@ -20,12 +20,13 @@
 }
 
 /*Websites Structure*/
-html, body {
+html,
+body {
     height: 100%;
 }
 
 header {
-    position:relative;
+    position: relative;
     display: flex;
     align-content: center;
     justify-content: center;
@@ -45,6 +46,7 @@ header h1 {
     justify-content: center;
     flex-shrink: 0
 }
+
 header #theme-btn {
     position: absolute;
     right: 1em;
@@ -53,12 +55,13 @@ header #theme-btn {
 
     width: 2em;
     height: 2em;
-    font-size:xx-large;
+    font-size: xx-large;
 
     background: none;
     border: none;
     color: var(--page-text-color);
 }
+
 /* 
 header #add-btn {
     position: absolute;
@@ -103,13 +106,13 @@ header #add-btn {
 main {
     width: auto;
     height: 100svh;
-    
+
 
     background-image: radial-gradient(var(--main-dot-color) 2px, transparent 2px);
     background-size: 32px 32px;
     background-color: var(--main-color);
-    
-    z-index:0;
+
+    z-index: 0;
 }
 
 
@@ -117,7 +120,7 @@ main {
 /*Tags and Notes*/
 
 .draggable {
-    
+
     z-index: 50;
     position: absolute;
     cursor: grab;
@@ -126,11 +129,11 @@ main {
 
     background-color: var(--tag-def-color);
     color: #fff;
-    
+
     touch-action: none;
 
     box-shadow: 0px 10px 1em var(--box-shadow);
-    
+
 }
 
 .draggable.dragging {
@@ -165,7 +168,7 @@ main {
     color: black;
     font-weight: bold;
     text-align: center;
-       
+
 }
 
 .note:focus {
