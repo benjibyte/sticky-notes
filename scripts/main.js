@@ -9,10 +9,8 @@ import { readBoard } from "./read.js";
 
 
 const addNoteBtn = document.getElementById("add-btn");
-let tagCount = 0;
 addNoteBtn.addEventListener("click", () => {
-    makeNote(tagCount)
-    tagCount++;
+    makeNote()
 });
 
 const saveNoteBtn = document.getElementById("save-btn");
@@ -23,8 +21,8 @@ saveNoteBtn.addEventListener("click", () => {
 });
 
 
-function makeNote(tagCount) {
-    let tagId = "tag" + `${tagCount}`;
+function makeNote() {
+    let tagId = crypto.randomUUID();
 
     // create the tag
     const newTag = document.createElement("div");
