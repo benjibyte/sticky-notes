@@ -16,7 +16,7 @@ addNoteBtn.addEventListener("click", () => {
 const saveNoteBtn = document.getElementById("save-btn");
 saveNoteBtn.addEventListener("click", () => {
     const notesArea = document.querySelector(".notes-area");
-    const notesArray = Array.from(notesArea.childNodes);
+    const notesArray = Array.from(notesArea.children);
     readBoard(notesArray);
 });
 
@@ -113,8 +113,6 @@ function makeNote() {
         document.removeEventListener("touchmove", dragtag);
         
     }
-
-    return tagCount;
 };
 
 const tagBook = document.querySelectorAll(".draggable");
