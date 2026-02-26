@@ -9,22 +9,20 @@ import { readBoard } from "./read.js";
 
 
 const addNoteBtn = document.getElementById("add-btn");
-let tagCount = 0;
 addNoteBtn.addEventListener("click", () => {
-    makeNote(tagCount)
-    tagCount++;
+    makeNote()
 });
 
 const saveNoteBtn = document.getElementById("save-btn");
 saveNoteBtn.addEventListener("click", () => {
     const notesArea = document.querySelector(".notes-area");
-    const notesArray = Array.from(notesArea.childNodes);
+    const notesArray = Array.from(notesArea.children);
     readBoard(notesArray);
 });
 
 
-function makeNote(tagCount) {
-    let tagId = "tag" + `${tagCount}`;
+function makeNote() {
+    let tagId = crypto.randomUUID();
 
     // create the tag
     const newTag = document.createElement("div");
@@ -115,8 +113,6 @@ function makeNote(tagCount) {
         document.removeEventListener("touchmove", dragtag);
         
     }
-
-    return tagCount;
 };
 
 const tagBook = document.querySelectorAll(".draggable");
