@@ -5,14 +5,33 @@ const bulletinBoard = document.getElementById("bulletin-board");
 
 
 export function readBoard(notesArray) {
-    
-    let saveFile = ""; // This will be JSON, added onto later
+    console.log(notesArray);
+    let saveFile = {notes:[]}; // This will be JSON, added onto later
   
     for (const note of notesArray) {
-      console.log("Adding Note " + note + " to JSON-export file");
-      saveFile += String(note.innerHTML);
+      console.log("Adding Note " + note.id + " to JSON-export file");
+      saveFile.notes.push(String(note.innerHTML));
       
-  }
-  console.log(saveFile); // Apparantly the notes.innerHTML are "undefined" per note. Maybe do something other than inner.hmtl?
+    }
+    let saveJSON = JSON.stringify(saveFile,null,1)
+    downloadSave(saveJSON)
+    console.log(saveFile);
 }
 
+function downloadSave(object){
+    let datastring = 'data:text/json;charset=utf-8,' + encodeURI(object);
+
+    // Create an anchor element for the download
+    const downloadLink = document.createElement('a');
+    downloadLink.href = datastring;
+    downloadLink.download = "notes.json"; // Set the file name
+
+    // Append the link to the body (necessary for Firefox)
+    document.body.appendChild(downloadLink);
+
+    // Programmatically click the link to trigger the download
+    downloadLink.click();
+
+    // Clean up by removing the link and revoking the URL
+    document.body.removeChild(downloadLink);
+};

@@ -28,7 +28,7 @@ function makeNote() {
     const newTag = document.createElement("div");
     newTag.id = tagId;
     newTag.className = "draggable";
-    document.querySelector("main").appendChild(newTag);
+    document.querySelector(".notes-area").appendChild(newTag);
     
     // create close square to follow tag
     const closetag = document.createElement("div"); // the red close square to delete an element.
