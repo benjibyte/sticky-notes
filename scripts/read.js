@@ -10,7 +10,7 @@ export function readBoard(notesArray) {
   
     for (const note of notesArray) {
       console.log("Adding Note " + note.id + " to JSON-export file");
-      saveFile.notes.push(String(note.innerHTML));
+      saveFile.notes.push(String(note.getElementsByClassName("note")[0].innerText));
       
     }
     let saveJSON = JSON.stringify(saveFile,null,1)
